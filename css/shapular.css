@@ -127,19 +127,17 @@ input{
 	margin-left: 20px;
 }
 #confirmation, 
+#highscores,
 #end{
 	z-index: 200;
 	position: absolute;
 	border: 10px solid #9ee2ef;
 	background-color: white;
 	width: 400px;
-	top: 40%;
+	top: 20%;
 	left: 50%;
 	margin-left: -200px;
 	text-align: center;
-}
-#highscores {
-	top: 20%;
 }
 
 .confirm-header, 
