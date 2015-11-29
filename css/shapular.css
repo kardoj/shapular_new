@@ -127,7 +127,6 @@ input{
 	margin-left: 20px;
 }
 #confirmation, 
-#highscores,
 #end{
 	z-index: 200;
 	position: absolute;
@@ -139,6 +138,10 @@ input{
 	margin-left: -200px;
 	text-align: center;
 }
+#highscores {
+	top: 20%;
+}
+
 .confirm-header, 
 .highscores-header,
 .end-header{
