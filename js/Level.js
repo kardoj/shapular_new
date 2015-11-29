@@ -26,6 +26,7 @@ SHAPULAR.loadLevel = function(name){
 // This function will run once the parts are fetched and ready to be loaded
 SHAPULAR.loadLevelParts = function(){
 	console.log("loading parts");
+	console.log(this.levelData);
 	
 	// Frame in the middle
 	$(this.container).append("<img class='level-frame-graphic' id='frame-img' src='" + this.levelData.frame.image + "' alt='level frame' />");

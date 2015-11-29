@@ -49,7 +49,11 @@
 			$response->frame = $frame;
 			
 			// Get all the correct coordinates from the database
-			$query = $connection->prepare("SELECT file_name, x_coord, y_coord FROM parts");
+			$query = $connection->prepare("SELECT file_name, x_coord, y_coord FROM parts
+											INNER JOIN levels ON
+											parts.level_id=levels.id
+											WHERE levels.name=?");
+			$query->bind_param("s", $level);
 			$query->bind_result($file_name, $x_coord, $y_coord);
 			$query->execute();
 			$coordinates = array();
