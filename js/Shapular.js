@@ -8,6 +8,8 @@ var SHAPULAR = {
 		y: 0
 	},
 	allowedError: 10, // Pixel difference allowed when registering win condition
+	timer: null,
+	timerDisplayInterval: null,
 	
 	// View names used in title
 	prefix: "Shapular",

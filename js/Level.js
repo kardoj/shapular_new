@@ -26,7 +26,6 @@ SHAPULAR.loadLevel = function(name){
 // This function will run once the parts are fetched and ready to be loaded
 SHAPULAR.loadLevelParts = function(){
 	console.log("loading parts");
-	console.log(this.levelData);
 	
 	// Frame in the middle
 	$(this.container).append("<img class='level-frame-graphic' id='frame-img' src='" + this.levelData.frame.image + "' alt='level frame' />");
@@ -35,7 +34,23 @@ SHAPULAR.loadLevelParts = function(){
 	$("#frame-img").css("margin-left", -(this.levelData.frame.width/2));	
 	$("#frame-img").css("margin-top", -(this.levelData.frame.height/2));	
 	
+	// Put the parts on screen
 	this.randomizeParts();
+	
+	// Initialize the timer
+	this.timer = new ShapularTimer();
+	
+	// Start the timer
+	this.timer.start();
+	
+	this.setTimerDisplayInterval();
+}
+
+SHAPULAR.setTimerDisplayInterval = function(){
+	// Timer display interval
+	SHAPULAR.timerDisplayInterval = setInterval(function(){
+		$("#menubar-right-timer").text(SHAPULAR.timer.getTime());
+	}, 100);
 }
 
 // Create parts on random locations
@@ -106,6 +121,8 @@ SHAPULAR.addEventListenersToParts = function(){
 					alert("You win!");
 					// Remove all the piece listeners so pieces can not be moved until choosing another level
 					$(".level-part-graphic").draggabilly("disable");
+					SHAPULAR.timer.stop();
+					clearInterval(SHAPULAR.timerDisplayInterval);
 				}
 				
 	});

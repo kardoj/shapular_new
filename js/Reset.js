@@ -1,4 +1,7 @@
 SHAPULAR.resetLevel = function(name){
+	// Stop the timer when dialogue active
+	SHAPULAR.timer.stop();
+	
 	console.log("reset");
 	
 	// Overlay to deactivate other links
@@ -16,10 +19,18 @@ SHAPULAR.resetLevel = function(name){
 		SHAPULAR.randomizeParts();
 		$("#confirmation").remove();
 		$("#confirm-overlay").remove();
+		
+		// Reset the timer for new game
+		SHAPULAR.timer.reset();
+		SHAPULAR.timer.start();
+		SHAPULAR.setTimerDisplayInterval();
 	});
 	$("#confirm-cancel-link").on("click", function(){
 		console.log("reset cancelled");
 		$("#confirmation").remove();
 		$("#confirm-overlay").remove();
+		
+		SHAPULAR.timer.start();
+		SHAPULAR.setTimerDisplayInterval();
 	});
 }
