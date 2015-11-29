@@ -1,0 +1,10 @@
+Structure of the levels
+-----------------------
+Graphical level data is saved in img/levels directory. Each levels has its own directory
+with whatever name. Level names and directories are linked together in the database. Every
+level directory MUST CONTAIN a file called frame.png which represents the shape to be
+made in that level. Individual part files can be named anything but using numbers (1.png, 2.png ...)
+is recommended. All the files are linked to a level in the database. frame.png is not saved
+in database because it is always centered and part coordinates are saved relative to center (so
+it is possible to use different resolutions). Every level also has to have a file called
+thumb.png (180px * 180px) which is shown in the level selection screen.

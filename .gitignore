@@ -17,6 +17,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Project files
+sqlconf.php
+
 # =========================
 # Operating System Files
 # =========================

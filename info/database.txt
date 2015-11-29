@@ -1,0 +1,76 @@
+Tables
+--------------------------
+levels
+*id INT
+-directory VARCHAR(255)
+-ordering INT
+-name VARCHAR(255)
+-description TEXT
+-times_completed INT
+--------------------------
+parts
+*id INT
+-level_id INT 
+-file_name VARCHAR(255)
+-x_coord INT
+-y_coord INT
+--------------------------
+leaderboard
+*id INT
+-level_id INT
+-name VARCHAR(255)
+-time TIME
+
+Commands
+------------------------------------------------
+CREATE TABLE levels(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	directory VARCHAR(255),
+	ordering INT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	description TEXT,
+	times_completed INT NOT NULL DEFAULT 0
+);
+------------------------------------------------
+CREATE TABLE parts(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	level_id INT NOT NULL,
+	file_name VARCHAR(255) NOT NULL,
+	x_coord INT NOT NULL,
+	y_coord INT NOT NULL
+);
+------------------------------------------------
+CREATE TABLE leaderboard(
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	level_id INT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	time TIME NOT NULL
+);
+------------------------------------------------
+INSERT INTO levels(directory, ordering, name, description) 
+	VALUES("1", 1, "Circle", "First steps...");
+----------------------------------------------------------
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(1, "1.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(1, "2.png", -4, -3);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(1, "3.png", 108, 4);
+----------------------------------------------------------
+INSERT INTO levels(directory, ordering, name, description)
+	VALUES("2", 2, "Square", "A little bit harder.");
+----------------------------------------------------------
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "1.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "2.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "3.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "4.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "5.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "6.png", 38, -22);
+INSERT INTO parts(level_id, file_name, x_coord, y_coord)
+	VALUES(2, "7.png", 38, -22);
