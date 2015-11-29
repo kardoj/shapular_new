@@ -6,6 +6,12 @@ html, body{
 	color: white;
 	font-size: 24px;
 }
+*{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 #container{
 	padding: 0;
 	margin: 0;
@@ -116,7 +122,8 @@ html, body{
 .menubar-link+.menubar-link{
 	margin-left: 20px;
 }
-#confirmation{
+#confirmation, 
+#highscores{
 	z-index: 200;
 	position: absolute;
 	border: 10px solid #9ee2ef;
@@ -127,15 +134,19 @@ html, body{
 	margin-left: -200px;
 	text-align: center;
 }
-.confirm_header{
+.confirm-header, 
+.highscores-header{
 	background-color: #9ee2ef;
 	padding-bottom: 10px;
 }
-#confirm-accept-link, #confirm-cancel-link{
+#confirm-accept-link, 
+#confirm-cancel-link, 
+#highscores-back-to-game-link, 
+#highscores-level-select-link {
 	margin: 50px 10px 0 10px;
 	color: #9ee2ef;
 }
-#confirm-overlay{
+#dialogue-overlay{
 	z-index: 199;
 	position: absolute;
 	left: 0;
@@ -150,4 +161,8 @@ html, body{
 .level-part-graphic{
 	z-index: 20;
 	position: absolute;
+}
+.highscores-content{
+	color: #9ee2ef;
+	padding: 40px 20px 40px 20px;
 }

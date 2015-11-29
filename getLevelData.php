@@ -24,10 +24,10 @@
 	if(isSet($_REQUEST["level"])){
 		$level = $_REQUEST["level"];		
 		require_once("sqlconf.php");
+		require_once("db_connection_start.php");
 		
 		// Get level directory from the database
 		$directory = null;
-		$connection = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME);
 		$query = $connection->prepare("SELECT directory FROM levels WHERE name=?");
 		$query->bind_param("s", $level);
 		$query->bind_result($directory);
@@ -79,6 +79,6 @@
 			$response->pieces = $pieces;	
 			echo json_encode($response);	
 		}
-		$connection->close();
+		require_once("db_connection_close.php");
 	}
 ?>

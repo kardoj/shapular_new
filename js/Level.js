@@ -123,6 +123,7 @@ SHAPULAR.addEventListenersToParts = function(){
 					$(".level-part-graphic").draggabilly("disable");
 					SHAPULAR.timer.stop();
 					clearInterval(SHAPULAR.timerDisplayInterval);
+					SHAPULAR.timerDisplayInterval = null;
 				}
 				
 	});

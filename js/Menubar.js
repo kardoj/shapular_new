@@ -19,6 +19,11 @@ SHAPULAR.loadMenubar = function(name){
 		SHAPULAR.resetLevel(name);
 		console.log("reset level " + name);
 	});
+	
+	$("#level-highscores-link").on("click", function(){
+		console.log("displaying highscores for " + name);
+		SHAPULAR.showHighscores(name);
+	});
 }
 
 SHAPULAR.removeMenubar = function(){
@@ -26,4 +31,5 @@ SHAPULAR.removeMenubar = function(){
 	SHAPULAR.timer.stop();
 	SHAPULAR.timer.reset();
 	clearInterval(SHAPULAR.timerDisplayInterval);
+	SHAPULAR.timerDisplayInterval = null;
 }
