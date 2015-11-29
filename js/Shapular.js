@@ -1,4 +1,4 @@
-// Main object responsible for all the logic
+// Main object with all the global variables
 var SHAPULAR = {
 	container: null,
 	levelData: null, // contains active level graphics info
@@ -10,6 +10,7 @@ var SHAPULAR = {
 	allowedError: 10, // Pixel difference allowed when registering win condition
 	timer: null,
 	timerDisplayInterval: null,
+	currentLevelName: null,
 	
 	// View names used in title
 	prefix: "Shapular",

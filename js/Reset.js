@@ -1,6 +1,8 @@
 SHAPULAR.resetLevel = function(name){
 	// Stop the timer when dialogue active
-	SHAPULAR.timer.stop();
+	if(SHAPULAR.timerDisplayInterval){
+		SHAPULAR.timer.stop();
+	}
 	
 	console.log("reset");
 	
@@ -23,14 +25,16 @@ SHAPULAR.resetLevel = function(name){
 		// Reset the timer for new game
 		SHAPULAR.timer.reset();
 		SHAPULAR.timer.start();
-		SHAPULAR.setTimerDisplayInterval();
+		//SHAPULAR.setTimerDisplayInterval();
 	});
 	$("#confirm-cancel-link").on("click", function(){
 		console.log("reset cancelled");
 		$("#confirmation").remove();
 		$("#dialogue-overlay").remove();
 		
-		SHAPULAR.timer.start();
-		SHAPULAR.setTimerDisplayInterval();
+		if(SHAPULAR.timerDisplayInterval){
+			SHAPULAR.timer.start();
+		}
+		//SHAPULAR.setTimerDisplayInterval();
 	});
 }

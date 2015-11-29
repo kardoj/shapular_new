@@ -1,6 +1,7 @@
 SHAPULAR.loadLevel = function(name){
 	console.log("loading level " + name);
 	SHAPULAR.setPageTitle("playing " + name);
+	SHAPULAR.currentLevelName = name;
 	$(this.container).empty();
 
 	// Remove all the classes
@@ -118,12 +119,12 @@ SHAPULAR.addEventListenersToParts = function(){
 				}
 				// If all coordinates matched, player wins!
 				if(win){
-					alert("You win!");
 					// Remove all the piece listeners so pieces can not be moved until choosing another level
 					$(".level-part-graphic").draggabilly("disable");
 					SHAPULAR.timer.stop();
 					clearInterval(SHAPULAR.timerDisplayInterval);
 					SHAPULAR.timerDisplayInterval = null;
+					SHAPULAR.levelEnd(SHAPULAR.currentLevelName);
 				}
 				
 	});

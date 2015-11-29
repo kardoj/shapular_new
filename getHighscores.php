@@ -8,7 +8,7 @@
 										INNER JOIN levels ON
 										levels.id = leaderboard.level_id
 										WHERE levels.name = ?
-										ORDER BY leaderboard.time DESC LIMIT 10");
+										ORDER BY leaderboard.time ASC LIMIT 10");
 		$query->bind_param("s", $level);
 		$query->bind_result($name, $time);
 		$query->execute();

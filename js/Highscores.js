@@ -25,7 +25,7 @@ SHAPULAR.showHighscores = function(name){
 				highscores = JSON.parse(highscores);
 				var highscoresHTML = "<ol>";
 				for(var i=0; i<highscores.length; i++){
-					highscoresHTML += "<li>" + highscores.name + " - " + highscores.time + "</li>";
+					highscoresHTML += "<li>" + highscores[i].name + " - " + highscores[i].time + "</li>";
 				}
 				highscoresHTML += "</ol>";
 				$("#highscores-content").html(highscoresHTML);

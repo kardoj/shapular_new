@@ -33,6 +33,18 @@ SHAPULAR.loadLevelSelect = function(){
 	$("#level_2_link").on("click", function(){
 		SHAPULAR.loadLevel("Square");
 	});
+	$("#level_3_link").on("click", function(){
+		alert("Sorry, level not available!");
+	});
+	$("#level_4_link").on("click", function(){
+		alert("Sorry, level not available!");
+	});
+	$("#level_5_link").on("click", function(){
+		alert("Sorry, level not available!");
+	});
+	$("#level_6_link").on("click", function(){
+		alert("Sorry, level not available!");
+	});
 	
 	// Levels ...
 	
