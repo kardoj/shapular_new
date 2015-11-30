@@ -9,7 +9,7 @@ SHAPULAR.showHighscores = function(name){
 	// Overlay to deactivate other links
 	$("body").append("<div id='dialogue-overlay'></div>");
 	
-	// Display confirmation
+	// Display highscores
 	$("body").append("<div id='highscores'></div>");
 	$("#highscores").append("<div class='highscores-header'>Highscores for " + name + "</div>");
 	$("#highscores").append("<div id='highscores-content' class='highscores-content'>No scores for " + name + " yet!</div>");
@@ -30,6 +30,9 @@ SHAPULAR.showHighscores = function(name){
 				highscoresHTML += "</ol>";
 				$("#highscores-content").html(highscoresHTML);
 			}
+							
+			// Vertically center
+			SHAPULAR.verticallyCenter("#highscores");
 		}
 	});
 	
@@ -52,4 +55,5 @@ SHAPULAR.showHighscores = function(name){
 		SHAPULAR.removeMenubar();
 		SHAPULAR.loadLevelSelect();
 	});
+	
 }

@@ -34,6 +34,8 @@ SHAPULAR.levelEnd = function(name){
 			} else {
 				SHAPULAR.displayNameInput();
 			}
+				
+			SHAPULAR.verticallyCenter("#end");
 		}
 	});
 	

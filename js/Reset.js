@@ -25,7 +25,6 @@ SHAPULAR.resetLevel = function(name){
 		// Reset the timer for new game
 		SHAPULAR.timer.reset();
 		SHAPULAR.timer.start();
-		//SHAPULAR.setTimerDisplayInterval();
 	});
 	$("#confirm-cancel-link").on("click", function(){
 		console.log("reset cancelled");
@@ -35,6 +34,7 @@ SHAPULAR.resetLevel = function(name){
 		if(SHAPULAR.timerDisplayInterval){
 			SHAPULAR.timer.start();
 		}
-		//SHAPULAR.setTimerDisplayInterval();
 	});
+	
+	SHAPULAR.verticallyCenter("#confirmation");
 }
