@@ -25,6 +25,12 @@ SHAPULAR.showHighscores = function(name){
 				highscores = JSON.parse(highscores);
 				var highscoresHTML = "<ol>";
 				for(var i=0; i<highscores.length; i++){
+					
+					// If the name is too long, show a portion of it
+					if(highscores[i].name.length > 12){
+						highscores[i].name = highscores[i].name.substring(0, 13) + "...";
+					}
+					
 					highscoresHTML += "<li>" + highscores[i].name + " - " + highscores[i].time + "</li>";
 				}
 				highscoresHTML += "</ol>";
